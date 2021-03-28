@@ -1,8 +1,10 @@
 import { Sequelize } from "sequelize";
 import "dotenv/config"
 
-const db = new Sequelize(
-  process.env.DATABASE_URL, {logging: false, ssl: true}
-)
+const db = new Sequelize({
+  dialect: 'sqlite',
+  storage: './database.sqlite',
+  logging: false
+});
 
 export default db
