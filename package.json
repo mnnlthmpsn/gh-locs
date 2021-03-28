@@ -4,7 +4,8 @@
   "description": "Address book backend",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm index.js",
+    "start": "node index.js",
+    "dev": "nodemon -r esm index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joey",
