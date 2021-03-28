@@ -8,13 +8,13 @@ import addressBook from "./src/routes/addressBook";
 import backend from "./src/routes/backend";
 
 
-// // test db
-// db.authenticate()
-//   .then(() => {
-//     db.sync({force: true})
-//     console.log("DB connected")
-//   })
-//   .catch((err) => console.log(err));
+// test db
+db.authenticate()
+  .then(() => {
+    db.sync({force: true})
+    console.log("DB connected")
+  })
+  .catch((err) => console.log(err));
 
 const app = express();
 const port = process.env.PORT;
