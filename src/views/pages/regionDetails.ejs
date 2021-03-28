@@ -1,0 +1,14 @@
+<% if (cities.length == 0){ %>
+    <p> No cities for <strong><%= region.reg_desc %></strong></p>
+<% } else { %>
+    <% cities.map(city => { %>
+        <li>
+            <a href="/city/<%= city.id %>"><%= city.city_desc %></a>
+            <span><a href="/city/<%=city.id%>/delete">Delete</a></span>
+        </li>
+   <% }) %>
+<% } %>
+
+<button>
+    <a href="/region/<%= region.id %>/city/add">Add City</a>
+</button>

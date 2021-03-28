@@ -1,0 +1,14 @@
+<% if (regions.length > 0) { %>
+    <% regions.map(region => { %>
+        <li>
+            <a href="/region/<%=region.id%>"><%= region.reg_desc %></a>
+            <span><a href="/region/<%=region.id%>/delete">Delete</a></span>
+        </li>
+    <% }) %>
+ <% } else { %>
+    <p>No Regions added yet</p>
+ <% }%>
+
+<button>
+    <a href="/add/region">Add Region</a>
+</button>

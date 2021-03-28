@@ -1,0 +1,14 @@
+<% if (suburbs.length == 0){ %>
+    <p> No Suburbs for <strong><%= city.city_desc %></strong></p>
+<% } else { %>
+    <% suburbs.map(sb => { %>
+        <li>
+            <%= sb.sub_desc %>
+            <span><a href="/suburb/<%=sb.id%>/delete">Delete</a></span>
+        </li>
+   <% }) %>
+<% } %>
+
+<button>
+    <a href="/city/<%= city.id %>/suburb/add">Add Suburb</a>
+</button>
