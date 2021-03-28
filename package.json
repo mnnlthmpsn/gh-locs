@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Address book backend",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "build": "babel src -d dist",
+    "start":"npm run build && node dist",
     "dev": "nodemon -r esm index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,11 @@
   },
   "engines": {
     "node": "14.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.12"
   }
 }
