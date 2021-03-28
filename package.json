@@ -4,34 +4,28 @@
   "description": "Address book backend",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist",
-    "start":"npm run build && node dist",
-    "dev": "nodemon -r esm index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
   },
   "author": "Joey",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.6.2",
-    "@babel/cli": "^7.13.10",
-    "@babel/core": "^7.13.13",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.13.12"
+    "sequelize": "^6.6.2"
   },
   "engines": {
     "node": "14.x"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.10",
-    "@babel/core": "^7.13.13",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.13.12"
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^3.0.2"
   }
 }

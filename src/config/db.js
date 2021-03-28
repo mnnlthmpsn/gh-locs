@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
+import "dotenv/config"
 
 const db = new Sequelize(
-  "postgres://devAdmin:devAdmin@localhost:5432/addressBookDB", {logging: false}
+  process.env.DATABASE_URL, {logging: false}
 )
 
 export default db
