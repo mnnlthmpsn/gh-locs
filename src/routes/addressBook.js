@@ -84,4 +84,37 @@ router.get('/contact/:id', async (req, res) => {
     }
 })
 
+// updateContact
+router.put('/contact/update/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const { firstname, lastname, phone, regionId, cityId, suburbId } = req.body
+
+        await User.update(
+            {firstname, lastname, phone, regionId, cityId, suburbId},
+            {where: { id: id }}
+        )
+        res.json(200).send('Success')
+    } catch (err) {
+        res.status(500).send(err)
+    }
+})
+
+// deleteContact
+router.delete('/contact/delete/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        await User.destroy({
+            where: {
+                id: id
+            }
+        })
+        console.log('done')
+        return res.status(200).json("Contact Deleted")
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).send(err)
+    }
+})
+
 export default router
